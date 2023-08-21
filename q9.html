@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Numbers</title>
+</head>
+<body>
+    <h1>Even Numbers</h1>
+    <p>Even numbers between 1 and 20:</p>
+    <pre id="result"></pre>
+
+    <script>
+        function printEvenNumbers() {
+            let number = 2;
+            let evenNumbers = "";
+            while (number <= 20) {
+                evenNumbers += number + "\n";
+                number += 2;
+            }
+            document.getElementById("result").textContent = evenNumbers;
+        }
+
+        printEvenNumbers();
+    </script>
+</body>
+</html>
+

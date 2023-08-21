@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Sorting</title>
+</head>
+<body>
+    <h1>Array Sorting</h1>
+    <p>Enter numbers separated by commas:</p>
+    <input type="text" id="inputNumbers" placeholder="e.g. 3, 7, 2, 8, 5, 1, 9, 4">
+    <button onclick="sortArrays()">Sort Arrays</button>
+    <br>
+    <p id="result"></p>
+
+    <script>
+        function sortAscending(arr) {
+            for (let i = 0; i < arr.length - 1; i++) {
+                for (let j = i + 1; j < arr.length; j++) {
+                    if (arr[i] > arr[j]) {
+                        const temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        
+
+        function sortDescending(arr) {
+            for (let i = 0; i < arr.length - 1; i++) {
+                for (let j = i + 1; j < arr.length; j++) {
+                    if (arr[i] < arr[j]) {
+                        const temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+
+        function sortArrays() {
+            const inputNumbers = document.getElementById("inputNumbers").value;
+            const originalArray = inputNumbers.split(",").map(numStr => parseInt(numStr.trim()));
+            const ascendingArray = sortAscending([...originalArray]);
+            const descendingArray = sortDescending([...originalArray]);
+            const resultElement = document.getElementById("result");
+            
+            resultElement.textContent = "Original Array: " + originalArray.join(", ") +
+                                         "\nAscending Array: " + ascendingArray.join(", ") +
+                                         "\nDescending Array: " + descendingArray.join(", ");
+        }
+    </script>
+</body>
+</html>

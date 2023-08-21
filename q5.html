@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positive Number Sum</title>
+</head>
+<body>
+    <h1>Positive Number Sum</h1>
+    <p>Enter numbers separated by commas:</p>
+    <input type="text" id="inputNumbers" placeholder="e.g. 3, -2, 7, 0, -5, 9, -1, 4">
+    <button onclick="calculateSum()">Calculate Sum</button>
+    <p id="result"></p>
+
+    <script>
+        function sumOfPositiveNumbers(arr) {
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > 0) {
+                    sum += arr[i];
+                }
+            }
+            return sum;
+        }
+
+        function calculateSum() {
+            const inputNumbers = document.getElementById("inputNumbers").value;
+            const numbersArray = inputNumbers.split(",").map(numStr => parseInt(numStr.trim()));
+            const positiveSum = sumOfPositiveNumbers(numbersArray);
+            const resultElement = document.getElementById("result");
+            resultElement.textContent = `Sum of positive numbers: ${positiveSum}`;
+        }
+    </script>
+</body>
+</html>

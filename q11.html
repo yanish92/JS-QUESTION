@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Property Iteration</title>
+</head>
+<body>
+    <h1>Object Property Iteration</h1>
+    <pre id="result"></pre>
+
+    <script>
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 30,
+            occupation: "Engineer"
+        };
+
+        let output = "";
+        for (const property in person) {
+            if (person.hasOwnProperty(property)) {
+                output += `${property}: ${person[property]}\n`;
+            }
+        }
+
+        document.getElementById("result").textContent = output;
+    </script>
+</body>
+</html>
+

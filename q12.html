@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Doubling</title>
+</head>
+<body>
+    <h1>Array Doubling</h1>
+    <p>Original Array: <span id="originalArray"></span></p>
+    <p>Doubled Array: <span id="doubledArray"></span></p>
+
+    <script>
+        const originalArray = [2, 5, 8, 19, 15];
+        const doubledArray = [];
+
+        for (const element of originalArray) {
+            doubledArray.push(element * 2);
+        }
+
+        document.getElementById("originalArray").textContent = originalArray.join(", ");
+        document.getElementById("doubledArray").textContent = doubledArray.join(", ");
+    </script>
+</body>
+</html>
